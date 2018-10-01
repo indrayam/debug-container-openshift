@@ -1,0 +1,5 @@
+# Debug Container
+
+Inspiration: [Inspiration](https://ahmet.im/blog/debugging-scratch/)
+
+How would you debug an issue with a particular container in a Kubernetes Cluster if the container did not have the right tools. Hence the existence of this repo :smile:
