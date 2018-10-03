@@ -24,6 +24,12 @@ tar -xvzf helm-v2.11.0-linux-amd64.tar.gz
 mv linux-amd64/helm ~/bin
 chmod +x ~/bin/helm
 
+# Setup oc
+cd ~/src
+tar -xvzf openshift-origin-client-tools-v3.10.0-dd10d17-linux-64bit.tar.gz
+mv openshift-origin-client-tools-v3.10.0-dd10d17-linux-64bit/oc ~/bin
+chmod +x ~/bin/oc
+
 # Setup fzf
 cd ~
 ~/.fzf/install --all

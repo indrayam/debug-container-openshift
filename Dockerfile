@@ -2,7 +2,7 @@
 FROM alpine:3.8
 
 # Update Software repository
-RUN apk update && apk upgrade && apk add --no-cache git openssh-client curl less openssl tree less bash bash-completion ca-certificates jq coreutils binutils findutils grep vim ncurses redis
+RUN apk update && apk upgrade && apk add --no-cache git libc6-compat openssh-client curl less openssl tree less bash bash-completion ca-certificates jq coreutils binutils findutils grep vim ncurses redis
 
 # Setup /home/anand
 ENV APP_ROOT=/home/anand
@@ -12,6 +12,7 @@ ADD https://storage.googleapis.com/kubernetes-release/release/v1.12.0/bin/linux/
 ADD https://storage.googleapis.com/kubernetes-helm/helm-v2.11.0-linux-amd64.tar.gz src/
 ADD https://dl.minio.io/client/mc/release/linux-amd64/mc bin/mc
 ADD https://github.com/wercker/stern/releases/download/1.8.0/stern_linux_amd64 bin/stern
+ADD https://github.com/openshift/origin/releases/download/v3.10.0/openshift-origin-client-tools-v3.10.0-dd10d17-linux-64bit.tar.gz src/
 COPY openshift/bin/ ${APP_ROOT}/bin/
 COPY openshift/kubectx .kubectx
 COPY openshift/kube-ps1 .kube-ps1
